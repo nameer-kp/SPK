@@ -1,0 +1,2844 @@
+[
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-settings/v1/rest/set/retrieveSettingsValueForKey",
+    "method": "POST",
+    "body": {
+      "SettingId": "CRU_SET_CABIN_HOLD",
+      "SettingKey": "CRU_SET_CRUISE_CABIN_HOLD_MAX_CBNS"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/cruiseAggrAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "ProviderCode": "",
+      "PriceCurrency": "USD",
+      "Market": "US",
+      "Data": {
+        "IBS_CruAggregateRQ": {
+          "CruiseSearch": {
+            "Itinerary": "",
+            "Departure": {
+              "Start": "2026-02-02",
+              "End": "2026-07-02"
+            },
+            "OverridePassengerControlCapacity": "No",
+            "BedConfiguration": ""
+          },
+          "AdhocCriteria": {
+            "SendSailingInfo": true,
+            "SendDepartureDetails": true,
+            "SendShipDetails": false,
+            "SendDeckDetails": false,
+            "SendDeckPlanDetails": false,
+            "SendDiningRoomDetails": false,
+            "SendPublicRoomDetails": false,
+            "SendShipPolicies": false,
+            "SendCategoryDetails": false,
+            "SendCabinDetails": false,
+            "SendFare": false,
+            "SendBedConfigDetails": false,
+            "SendFacilityDetails": false,
+            "SendItineraryDetails": true,
+            "SendIndicativeRatesforDeparture": "For Departure",
+            "SendPromotions": "Pre Applied Promotions",
+            "IsBasicSearch": true
+          },
+          "CruiseParticulars": {
+            "BookingType": "IND",
+            "ServiceOrigin": "iTravelB2B"
+          },
+          "GuestDetails": {
+            "Guest": [
+              {
+                "CabinSequenceNumber": 1,
+                "PaxType": "Adult",
+                "PassengerreferenceID": 1
+              },
+              {
+                "CabinSequenceNumber": 1,
+                "PaxType": "Adult",
+                "PassengerreferenceID": 2
+              }
+            ]
+          },
+          "Offset": 0,
+          "SortCriteria": 1
+        }
+      },
+      "mData": {
+        "AdvancedSearchParameters": {
+          "Parameter": []
+        }
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/packageAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "BusinessParams": {
+        "BookingType": "IND",
+        "GroupCode": ""
+      },
+      "ProviderCode": null,
+      "Market": "US",
+      "PriceCurrency": "USD",
+      "Data": {
+        "IBS_PkgSearchRQ": {
+          "MoreDataEchoToken": "string",
+          "MaxResponses": "99",
+          "SortOrder": "A",
+          "CustomerCounts": [
+            {
+              "Room": 0,
+              "CabinSeqNumber": "1",
+              "CustomerCount": [
+                {
+                  "Code": "A",
+                  "PaxRefs": 1,
+                  "PassengerreferenceID": 1,
+                  "ExtraBedsReqd": "0",
+                  "Quantity": "1",
+                  "Age": null,
+                  "BirthDate": "",
+                  "LeadPax": false,
+                  "LoyaltyTier": "",
+                  "PointsToNextTier": "",
+                  "PersonType": ""
+                },
+                {
+                  "Code": "A",
+                  "PaxRefs": 2,
+                  "PassengerreferenceID": 2,
+                  "ExtraBedsReqd": "0",
+                  "Quantity": "1",
+                  "Age": null,
+                  "BirthDate": "",
+                  "LeadPax": false,
+                  "LoyaltyTier": "",
+                  "PointsToNextTier": "",
+                  "PersonType": ""
+                }
+              ]
+            }
+          ],
+          "Criteria": {
+            "AvailableOnlyIndicator": "true",
+            "PackageRef": {
+              "ExactMatch": "true",
+              "PackageCodes": ""
+            },
+            "DepartDateRange": {
+              "Start": "2026-02-02",
+              "End": "2026-07-02"
+            },
+            "PriceRange": {},
+            "EmbeddedCruise": {
+              "ShipNames": [],
+              "CruiseID": "J8_INTER,ATH_2_MAIN,J8040220260018,JOLLY_CRUISE_08,JOLLY_CRUISE_09,WRLD_CB_2,PCNST020626PCN,PCNST021126PCN,RL_POST,TOMDOM",
+              "CabinSequenceNumber": "1"
+            },
+            "EmbeddedAir": {},
+            "RatePlanCandidate": {
+              "ExactMatch": "true"
+            }
+          },
+          "DeparturesWanted": "true",
+          "DetailsWanted": "false",
+          "PricesWanted": "true"
+        }
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-settings/v1/rest/set/retrieveSettingsValueForKey",
+    "method": "POST",
+    "body": {
+      "SettingId": "SYS_PRICE_DISPLAY"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-settings/v1/rest/set/retrieveSettingsValueForKey",
+    "method": "POST",
+    "body": {
+      "SettingId": "CRU_SHOP_LIST",
+      "IsUserSetting": "false"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/cruiseAggrAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "ProviderCode": "",
+      "PriceCurrency": "USD",
+      "Market": "US",
+      "Data": {
+        "IBS_CruAggregateRQ": {
+          "CruiseSearch": {
+            "Itinerary": "",
+            "Departure": {
+              "Start": "2026-02-02",
+              "End": "2026-07-02"
+            },
+            "OverridePassengerControlCapacity": "No",
+            "BedConfiguration": ""
+          },
+          "AdhocCriteria": {
+            "SendSailingInfo": true,
+            "SendDepartureDetails": true,
+            "SendShipDetails": false,
+            "SendDeckDetails": false,
+            "SendDeckPlanDetails": false,
+            "SendDiningRoomDetails": false,
+            "SendPublicRoomDetails": false,
+            "SendShipPolicies": false,
+            "SendCategoryDetails": false,
+            "SendCabinDetails": false,
+            "SendFare": false,
+            "SendBedConfigDetails": false,
+            "SendFacilityDetails": false,
+            "SendItineraryDetails": true,
+            "SendIndicativeRatesforDeparture": "For Departure",
+            "SendPromotions": "Pre Applied Promotions",
+            "IsBasicSearch": true
+          },
+          "CruiseParticulars": {
+            "BookingType": "IND",
+            "ServiceOrigin": "iTravelB2B"
+          },
+          "GuestDetails": {
+            "Guest": [
+              {
+                "CabinSequenceNumber": 1,
+                "PaxType": "Adult",
+                "PassengerreferenceID": 1
+              },
+              {
+                "CabinSequenceNumber": 1,
+                "PaxType": "Adult",
+                "PassengerreferenceID": 2
+              }
+            ]
+          },
+          "Offset": 10,
+          "SortCriteria": 1
+        }
+      },
+      "mData": {
+        "AdvancedSearchParameters": {
+          "Parameter": []
+        }
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/packageAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "BusinessParams": {
+        "BookingType": "IND",
+        "GroupCode": ""
+      },
+      "ProviderCode": null,
+      "Market": "US",
+      "PriceCurrency": "USD",
+      "Data": {
+        "IBS_PkgSearchRQ": {
+          "MoreDataEchoToken": "string",
+          "MaxResponses": "99",
+          "SortOrder": "A",
+          "CustomerCounts": [
+            {
+              "Room": 0,
+              "CabinSeqNumber": "1",
+              "CustomerCount": [
+                {
+                  "Code": "A",
+                  "PaxRefs": 1,
+                  "PassengerreferenceID": 1,
+                  "ExtraBedsReqd": "0",
+                  "Quantity": "1",
+                  "Age": null,
+                  "BirthDate": "",
+                  "LeadPax": false,
+                  "LoyaltyTier": "",
+                  "PointsToNextTier": "",
+                  "PersonType": ""
+                },
+                {
+                  "Code": "A",
+                  "PaxRefs": 2,
+                  "PassengerreferenceID": 2,
+                  "ExtraBedsReqd": "0",
+                  "Quantity": "1",
+                  "Age": null,
+                  "BirthDate": "",
+                  "LeadPax": false,
+                  "LoyaltyTier": "",
+                  "PointsToNextTier": "",
+                  "PersonType": ""
+                }
+              ]
+            }
+          ],
+          "Criteria": {
+            "AvailableOnlyIndicator": "true",
+            "PackageRef": {
+              "ExactMatch": "true",
+              "PackageCodes": ""
+            },
+            "DepartDateRange": {
+              "Start": "2026-02-02",
+              "End": "2026-07-02"
+            },
+            "PriceRange": {},
+            "EmbeddedCruise": {
+              "ShipNames": [],
+              "CruiseID": "TOMDOM,J8,6J_CRU,RLTEST_SURU_2,RLTEST_SURU_3,SN260214010,JOLLY_CRUISE_10,PCNST021526PCN,ATH_3_POST,PCNST022026PCN",
+              "CabinSequenceNumber": "1"
+            },
+            "EmbeddedAir": {},
+            "RatePlanCandidate": {
+              "ExactMatch": "true"
+            }
+          },
+          "DeparturesWanted": "true",
+          "DetailsWanted": "false",
+          "PricesWanted": "true"
+        }
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/packageAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "BusinessParams": {
+        "BookingType": "IND",
+        "GroupCode": ""
+      },
+      "ProviderCode": null,
+      "Market": "US",
+      "PriceCurrency": "USD",
+      "Data": {
+        "IBS_PkgSearchRQ": {
+          "MoreDataEchoToken": "string",
+          "MaxResponses": "99",
+          "SortOrder": "A",
+          "CustomerCounts": [
+            {
+              "Room": 0,
+              "CabinSeqNumber": "1",
+              "CustomerCount": [
+                {
+                  "Code": "A",
+                  "PaxRefs": 1,
+                  "ExtraBedsReqd": "0",
+                  "Quantity": "1",
+                  "Age": null,
+                  "BirthDate": "",
+                  "LeadPax": false,
+                  "LoyaltyTier": "",
+                  "PersonType": ""
+                },
+                {
+                  "Code": "A",
+                  "PaxRefs": 2,
+                  "ExtraBedsReqd": "0",
+                  "Quantity": "1",
+                  "Age": null,
+                  "BirthDate": "",
+                  "LeadPax": false,
+                  "LoyaltyTier": "",
+                  "PersonType": ""
+                }
+              ]
+            }
+          ],
+          "Criteria": {
+            "AvailableOnlyIndicator": "true",
+            "PackageRef": {
+              "ExactMatch": "true",
+              "PackageCodes": "AISH_GRP_PKG_05"
+            },
+            "DepartDateRange": {
+              "Start": "2026-02-14",
+              "End": "2026-02-14"
+            },
+            "PriceRange": {},
+            "EmbeddedCruise": {
+              "ShipNames": [],
+              "CruiseID": "RLTEST_SURU_3",
+              "CabinSequenceNumber": "1",
+              "BerthedCategoryCodes": "",
+              "CabinNumber": "",
+              "RatePlan": "",
+              "SuperPnrNumber": "",
+              "ComponentId": ""
+            },
+            "EmbeddedAir": {},
+            "RatePlanCandidate": {
+              "ExactMatch": "true"
+            }
+          },
+          "DeparturesWanted": "true",
+          "DetailsWanted": "true",
+          "PricesWanted": "true"
+        }
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-notes/v1/rest/notesITAPI/fetchNotesDetailsForProducts",
+    "method": "POST",
+    "body": [
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.136",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRUDEFRLTEST_SURU_3"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.136",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "RL"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.136",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRUITIN15NSB-FMT-BYO"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.136",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRURPNEW_RAZ_TST1"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.136",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRUSHPCATEGC1TEST1RL"
+      },
+      {
+        "productType": "PKG",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.136",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "AISH_GRP_PKG_05"
+      }
+    ]
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-be-cruise/v1/rest/cru/promotion/fetchApplicablePromotions",
+    "method": "POST",
+    "body": {
+      "CruPromoCabinRequests": {
+        "CruPromoCabinRequest": [
+          {
+            "CabinSequenceNumber": "1",
+            "Product": {
+              "ProductType": "CRU",
+              "Brand": "CEL",
+              "PriceCurrency": "USD",
+              "BookingType": "IND",
+              "ReferralBookingIndicator": false,
+              "LeadItemIndicator": false,
+              "Cruise": {
+                "SailingInfo": {
+                  "SelectedSailing": {
+                    "VoyageID": "RLTEST_SURU_3",
+                    "Start": "2026-02-14T18:00:00.000Z",
+                    "Duration": 8,
+                    "End": "2026-02-22",
+                    "ItineraryCode": "15NSB-FMT-BYO",
+                    "CruiseType": "WC",
+                    "CruiseRating": "4",
+                    "ShipDetails": {
+                      "ShipCode": "RL",
+                      "ShipClassCode": "AN"
+                    },
+                    "CruiseLine": {
+                      "Code": "RCI"
+                    },
+                    "DeparturePort": {
+                      "LocationCode": "FMT",
+                      "LocationCountryCode": "JM"
+                    },
+                    "ArrivalPort": {
+                      "LocationCode": "BYO",
+                      "LocationCountryCode": "NZ"
+                    }
+                  },
+                  "SelectedCategory": {
+                    "SelectedCabin": {},
+                    "FareCode": "NEW_RAZ_TST1",
+                    "CategoryClass": "INS",
+                    "RatePlanTypeCode": "DISCOUNT",
+                    "RatePlanClassificationCode": "Standard"
+                  }
+                }
+              },
+              "ProductSubType": "FIT"
+            },
+            "Passengers": {
+              "Passenger": [
+                {
+                  "RefId": 1,
+                  "PaxType": "A",
+                  "IsLeadPassenger": false,
+                  "LoyaltyTier": "",
+                  "PersonType": ""
+                },
+                {
+                  "RefId": 2,
+                  "PaxType": "A",
+                  "IsLeadPassenger": false,
+                  "LoyaltyTier": "",
+                  "PersonType": ""
+                }
+              ]
+            },
+            "OnlyCategoryUpgradePromotionsRequired": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-cruise/v1/rest/cru/cruises/cabins/RLTEST_SURU_3",
+    "method": "GET"
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-notes/v1/rest/notesITAPI/fetchNotesDetailsForProducts",
+    "method": "POST",
+    "body": [
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.607",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRUDEFRLTEST_SURU_3"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.607",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "RL"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.607",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRUITIN15NSB-FMT-BYO"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.607",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRURPNEW_RAZ_TST1"
+      },
+      {
+        "productType": "CRU",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.607",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "CRUSHPCATEGMC1TEST1RL"
+      },
+      {
+        "productType": "PKG",
+        "travelStartDate": "2026-02-14T05:30:00.0",
+        "travelEndDate": "2026-02-22T05:30:00.0",
+        "bookingStartDate": "2026-02-02T03:38:11.607",
+        "travelDaysOfWeek": [
+          7
+        ],
+        "organizationUnits": [
+          "SSEA"
+        ],
+        "markets": [
+          "US"
+        ],
+        "channels": [
+          "B2E"
+        ],
+        "productCode": "AISH_GRP_PKG_05"
+      }
+    ]
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-settings/v1/rest/set/retrieveSettingsValueForKey",
+    "method": "POST",
+    "body": {
+      "SettingId": "CRU_SHOP_LIST",
+      "IsUserSetting": "false"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-settings/v1/rest/set/retrieveSettingsValueForKey",
+    "method": "POST",
+    "body": {
+      "SettingId": "CRU_SHOP_LIST",
+      "IsUserSetting": "false"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-be-cruise/v1/rest/cru/dining/getTraditionalRestaurantAvailability",
+    "method": "POST",
+    "body": {
+      "shipCode": "RL",
+      "startDate": "2026-02-14",
+      "endDate": "2026-02-22",
+      "cruiseId": "RLTEST_SURU_3",
+      "partySize": 2,
+      "channelId": "B2E",
+      "cabinCategoryId": "MC1",
+      "CannotBookFreeDining": false,
+      "NoOfNights": 8,
+      "PriceCurrency": "USD",
+      "GuestDetails": {
+        "Guest": [
+          {
+            "PaxType": "Adult",
+            "PassengerreferenceID": 1
+          },
+          {
+            "PaxType": "Adult",
+            "PassengerreferenceID": 2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/cruiseAggrAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "ProviderCode": "iTravel",
+      "PriceCurrency": "USD",
+      "Market": "US",
+      "Data": {
+        "IBS_CruAggregateRQ": {
+          "CruiseSearch": {
+            "Departure": {},
+            "LoyaltyTier": "",
+            "SelectedSailing": {
+              "CruiseID": "RLTEST_SURU_3",
+              "FareCode": "NEW_RAZ_TST1",
+              "SelectedCategory": "MC1"
+            },
+            "OverridePassengerControlCapacity": "No"
+          },
+          "AdhocCriteria": {
+            "SendSailingInfo": false,
+            "SendDepartureDetails": false,
+            "SendShipDetails": false,
+            "SendDeckDetails": false,
+            "SendDeckPlanDetails": false,
+            "SendDiningRoomDetails": false,
+            "SendPublicRoomDetails": false,
+            "SendShipPolicies": false,
+            "SendCategoryDetails": false,
+            "SendCabinDetails": false,
+            "SendFare": false,
+            "SendBedConfigDetails": false,
+            "SendFacilityDetails": true,
+            "SendCabins": "All cabins for selected category",
+            "SendAutoAssignFacilities": true
+          },
+          "CruiseParticulars": {
+            "BookingType": "IND",
+            "ServiceOrigin": "iTravelB2B"
+          },
+          "GuestDetails": {
+            "Guest": [
+              {
+                "CabinSequenceNumber": 1,
+                "PaxType": "Adult",
+                "PassengerreferenceID": 1,
+                "LeadPax": false,
+                "LoyaltyTier": "",
+                "PersonType": "",
+                "paxValue": "A1"
+              },
+              {
+                "CabinSequenceNumber": 1,
+                "PaxType": "Adult",
+                "PassengerreferenceID": 2,
+                "LeadPax": false,
+                "LoyaltyTier": "",
+                "PersonType": "",
+                "paxValue": "A2"
+              }
+            ]
+          },
+          "PackageContext": {
+            "Code": "AISH_GRP_PKG_05",
+            "Category": "DMD",
+            "Series": "",
+            "PackageItinerary": "ITN_AISH_01",
+            "PackageDeparture": "2026-02-14",
+            "PackageRegion": "",
+            "PackageOccurrenceCode": "",
+            "PackageDestinations": [
+              {
+                "PackageDestination": ""
+              }
+            ],
+            "PackageRatePlans": [
+              {
+                "RatePlan": "PKG_AISH_GRP_PKG_05_RP"
+              }
+            ]
+          }
+        }
+      },
+      "mData": {
+        "AdvancedSearchParameters": {
+          "Parameter": []
+        }
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Ran",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Rani",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniy",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "surName": "cru",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "surName": "cru2",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "surName": "cru",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "surName": "crup",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "surName": "crupk",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-customerprofile/v1/rest/customerProfileService/retrieveCustomerDetails",
+    "method": "POST",
+    "body": {
+      "companyCode": "RCG",
+      "firstName": "Raniya",
+      "surName": "crupkg",
+      "customerType": "I",
+      "pageNumber": "1",
+      "absoluteIndex": "1",
+      "customerStatus": "0"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-be-packaging/v1/rest/packageServiceAPI/reapplyPackagePromotion",
+    "method": "POST",
+    "body": {
+      "Passengers": {
+        "Passenger": [
+          {
+            "paxRefId": 1,
+            "paxID": "A1",
+            "paxFirstName": "Raniya",
+            "paxLastName": "crupkg",
+            "paxType": {
+              "key": "A",
+              "value": "Adult"
+            },
+            "IsSeated": true,
+            "customerProfileID": "",
+            "readonlyFname": false,
+            "readonlyLname": false,
+            "readonlyType": false,
+            "readonlyCustomerProfileID": true,
+            "checkedItem": true,
+            "EditButtonVisible": false,
+            "cartValCustomerProfileID": "",
+            "paxWeight": "",
+            "paxWeightUnit": "",
+            "paxRefIdCopy": 1,
+            "leadPax": true,
+            "phoneNo": null,
+            "memberContactInformation": [
+              {
+                "addressType": "H"
+              }
+            ],
+            "IsLeadPassenger": true,
+            "RefId": 1,
+            "PaxType": "A"
+          },
+          {
+            "paxRefId": 2,
+            "paxID": "A2",
+            "paxFirstName": "",
+            "paxLastName": "",
+            "paxType": {
+              "key": "A",
+              "value": "Adult"
+            },
+            "IsSeated": true,
+            "customerProfileID": "",
+            "readonlyFname": false,
+            "readonlyLname": false,
+            "readonlyType": false,
+            "readonlyCustomerProfileID": true,
+            "checkedItem": true,
+            "EditButtonVisible": true,
+            "cartValFName": "",
+            "cartValLName": "",
+            "cartValCustomerProfileID": "",
+            "paxWeight": "",
+            "paxWeightUnit": "",
+            "paxRefIdCopy": 2,
+            "IsLeadPassenger": false,
+            "RefId": 2,
+            "PaxType": "A"
+          }
+        ]
+      },
+      "Products": {
+        "Product": [
+          {
+            "RefId": 120,
+            "IsOfflineProduct": false,
+            "PassengerReferences": {
+              "PassengerReference": [
+                {
+                  "ID": 1,
+                  "PaxType": "A"
+                },
+                {
+                  "ID": 2,
+                  "PaxType": "A"
+                }
+              ]
+            },
+            "BookingType": "IND",
+            "ProductType": "PKG",
+            "ProviderCode": "iTravel",
+            "ProductStatus": "AVAILABLE",
+            "ProductName": "AISH_GRP_PKG_05",
+            "PriceCurrency": "USD",
+            "Package": {
+              "TotalPrice": {
+                "Currency": "USD",
+                "BaseCost": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "BasePrice": {
+                  "Amount": 400000,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "Discount": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "GrossPrice": {
+                  "Amount": 400000,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "NetPrice": {
+                  "Amount": 400000,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "AgencyCommission": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "VendorCommission": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "MarkUp": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "GrossProfit": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "NetProfit": {
+                  "Amount": 0,
+                  "Currency": "USD",
+                  "value": ""
+                },
+                "GrossProfitMargin": 0,
+                "NetProfitMargin": 0
+              },
+              "TotalInBookingCurrency": {
+                "Currency": "USD",
+                "Amount": 400000,
+                "Date": "2026-02-02T03:38:59.243"
+              },
+              "BookingDetails": {
+                "PackageInfo": {
+                  "PackageCode": "AISH_GRP_PKG_05",
+                  "PackageName": "AISH_GRP_PKG_05",
+                  "PackageCategory": "DMD",
+                  "PackageItineraryCode": "ITN_AISH_01",
+                  "PackageItineraryName": "ITN_AISH_01",
+                  "DepartureDate": "2026-02-14",
+                  "Theme": "",
+                  "Duration": "10",
+                  "RatePlan": "PKG_AISH_GRP_PKG_05_RP",
+                  "PriceMethodology": "P",
+                  "PriceOpacity": "T",
+                  "LeadItemRatePlanType": "DISCOUNT",
+                  "LeadItemType": "WC",
+                  "LeadItemRateClassification": "Standard",
+                  "LeadItemDuration": 8,
+                  "LeadItemFareClass": "NEW_RAZ_TST1"
+                },
+                "Destinations": {
+                  "Destination": [
+                    {
+                      "DestinationCode": "COK",
+                      "DestinationType": "CITY",
+                      "DateRange": {
+                        "Start": "2026-02-14",
+                        "End": "2026-02-24",
+                        "Duration": 10
+                      }
+                    }
+                  ]
+                },
+                "Promotions": {
+                  "Promo": []
+                },
+                "ParticipantDetails": [
+                  {
+                    "PaxRefId": 1
+                  },
+                  {
+                    "PaxRefId": 2
+                  }
+                ],
+                "PkgPricing": {
+                  "PriceSummary": {
+                    "CurrencyCode": "",
+                    "Amount": "",
+                    "TaxInclusive": ""
+                  }
+                },
+                "Charges": {
+                  "Charge": [
+                    {
+                      "Currency": "USD",
+                      "ChargeLevel": "PerPax",
+                      "ChargeType": "PKGBF",
+                      "ChargeTypeDescription": "Package Base fare",
+                      "Category": "Base",
+                      "IsCommissionable": true,
+                      "PayLater": false,
+                      "PricingCCYROE": 0,
+                      "BaseCost": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "BasePrice": {
+                        "Amount": 200000,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "Discount": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "GrossPrice": {
+                        "Amount": 200000,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "NetPrice": {
+                        "Amount": 200000,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "AgencyCommission": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "VendorCommission": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "MarkUp": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "AgencyCommissionPercentage": 0,
+                      "StandardCommissionPercentage": 0,
+                      "BonusCommissionPercentage": 0,
+                      "GrossProfit": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "NetProfit": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "GrossProfitMargin": 0,
+                      "NetProfitMargin": 0,
+                      "StandardCommission": {
+                        "Amount": 0
+                      },
+                      "paxType": "A",
+                      "PaxId": 1
+                    },
+                    {
+                      "Currency": "USD",
+                      "ChargeLevel": "PerPax",
+                      "ChargeType": "PKGBF",
+                      "ChargeTypeDescription": "Package Base fare",
+                      "Category": "Base",
+                      "IsCommissionable": true,
+                      "PayLater": false,
+                      "PricingCCYROE": 0,
+                      "BaseCost": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "BasePrice": {
+                        "Amount": 200000,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "Discount": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "GrossPrice": {
+                        "Amount": 200000,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "NetPrice": {
+                        "Amount": 200000,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "AgencyCommission": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "VendorCommission": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "MarkUp": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "AgencyCommissionPercentage": 0,
+                      "StandardCommissionPercentage": 0,
+                      "BonusCommissionPercentage": 0,
+                      "GrossProfit": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "NetProfit": {
+                        "Amount": 0,
+                        "Currency": "USD",
+                        "value": ""
+                      },
+                      "GrossProfitMargin": 0,
+                      "NetProfitMargin": 0,
+                      "StandardCommission": {
+                        "Amount": 0
+                      },
+                      "paxType": "A",
+                      "PaxId": 2
+                    }
+                  ]
+                },
+                "PackagePrice": {
+                  "PerUnitCharges": [
+                    {
+                      "PerUnitRPH": 0,
+                      "PerPaxCharges": {
+                        "Charge": [
+                          {
+                            "Currency": "USD",
+                            "ChargeLevel": "PerPax",
+                            "ChargeType": "PKGBF",
+                            "ChargeTypeDescription": "Package Base fare",
+                            "Category": "Base",
+                            "IsCommissionable": true,
+                            "PayLater": false,
+                            "PricingCCYROE": 0,
+                            "BaseCost": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "BasePrice": {
+                              "Amount": 200000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "Discount": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "GrossPrice": {
+                              "Amount": 200000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "NetPrice": {
+                              "Amount": 200000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "AgencyCommission": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "VendorCommission": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "MarkUp": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "AgencyCommissionPercentage": 0,
+                            "StandardCommissionPercentage": 0,
+                            "BonusCommissionPercentage": 0,
+                            "GrossProfit": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "NetProfit": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "GrossProfitMargin": 0,
+                            "NetProfitMargin": 0,
+                            "StandardCommission": {
+                              "Amount": 0
+                            },
+                            "paxType": "A",
+                            "PaxId": 1
+                          },
+                          {
+                            "Currency": "USD",
+                            "ChargeLevel": "PerPax",
+                            "ChargeType": "PKGBF",
+                            "ChargeTypeDescription": "Package Base fare",
+                            "Category": "Base",
+                            "IsCommissionable": true,
+                            "PayLater": false,
+                            "PricingCCYROE": 0,
+                            "BaseCost": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "BasePrice": {
+                              "Amount": 200000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "Discount": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "GrossPrice": {
+                              "Amount": 200000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "NetPrice": {
+                              "Amount": 200000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "AgencyCommission": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "VendorCommission": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "MarkUp": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "AgencyCommissionPercentage": 0,
+                            "StandardCommissionPercentage": 0,
+                            "BonusCommissionPercentage": 0,
+                            "GrossProfit": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "NetProfit": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "GrossProfitMargin": 0,
+                            "NetProfitMargin": 0,
+                            "StandardCommission": {
+                              "Amount": 0
+                            },
+                            "paxType": "A",
+                            "PaxId": 2
+                          }
+                        ]
+                      },
+                      "UnitCharges": {
+                        "Charge": [
+                          {
+                            "Currency": "USD",
+                            "ChargeLevel": "Once",
+                            "ChargeType": "PKGBF",
+                            "ChargeTypeDescription": "Package Base fare",
+                            "Category": "Base",
+                            "IsCommissionable": true,
+                            "PayLater": false,
+                            "PricingCCYROE": 0,
+                            "BaseCost": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "BasePrice": {
+                              "Amount": 400000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "Discount": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "GrossPrice": {
+                              "Amount": 400000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "NetPrice": {
+                              "Amount": 400000,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "AgencyCommission": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "VendorCommission": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "MarkUp": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "AgencyCommissionPercentage": 0,
+                            "StandardCommissionPercentage": 0,
+                            "BonusCommissionPercentage": 0,
+                            "GrossProfit": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "NetProfit": {
+                              "Amount": 0,
+                              "Currency": "USD",
+                              "value": ""
+                            },
+                            "GrossProfitMargin": 0,
+                            "NetProfitMargin": 0
+                          }
+                        ]
+                      },
+                      "UnitPrice": {
+                        "Charge": {
+                          "Currency": "USD",
+                          "ChargeLevel": "PerUnit",
+                          "ChargeType": "",
+                          "IsCommissionable": false,
+                          "PayLater": false,
+                          "PricingCCYROE": 0,
+                          "BaseCost": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "BasePrice": {
+                            "Amount": 400000,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "Discount": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "GrossPrice": {
+                            "Amount": 400000,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "NetPrice": {
+                            "Amount": 400000,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "AgencyCommission": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "VendorCommission": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "MarkUp": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "AgencyCommissionPercentage": 0,
+                          "StandardCommissionPercentage": 0,
+                          "BonusCommissionPercentage": 0,
+                          "GrossProfit": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "NetProfit": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "GrossProfitMargin": 0,
+                          "NetProfitMargin": 0
+                        }
+                      }
+                    }
+                  ],
+                  "TotalCharges": {
+                    "Charge": [
+                      {
+                        "Currency": "USD",
+                        "ChargeLevel": "Once",
+                        "ChargeType": "PKGBF",
+                        "ChargeTypeDescription": "Package Base fare",
+                        "Category": "Base",
+                        "IsCommissionable": true,
+                        "Discount": {
+                          "Amount": 0,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "BaseCost": {
+                          "Amount": 0,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "BasePrice": {
+                          "Amount": 400000,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "GrossPrice": {
+                          "Amount": 400000,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "NetPrice": {
+                          "Amount": 400000,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "AgencyCommission": {
+                          "Amount": 0,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "VendorCommission": {
+                          "Amount": 0,
+                          "Currency": "USD",
+                          "value": ""
+                        },
+                        "MarkUp": {
+                          "Amount": 0,
+                          "Currency": "USD",
+                          "value": ""
+                        }
+                      }
+                    ]
+                  },
+                  "ItemPrice": {
+                    "Currency": "USD",
+                    "BaseCost": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "BasePrice": {
+                      "Amount": 400000,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "Discount": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "GrossPrice": {
+                      "Amount": 400000,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "NetPrice": {
+                      "Amount": 400000,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "AgencyCommission": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "VendorCommission": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "MarkUp": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "GrossProfit": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "NetProfit": {
+                      "Amount": 0,
+                      "Currency": "USD",
+                      "value": ""
+                    },
+                    "GrossProfitMargin": 0,
+                    "NetProfitMargin": 0
+                  }
+                }
+              },
+              "Inclusions": {
+                "Component": [
+                  {
+                    "ItineraryItemInfo": {
+                      "RPH": "14",
+                      "UniqueRefID": "CRU|RLTEST_SURU_3|1|9|1|2026-02-14",
+                      "ItemRefId": "CRU|RLTEST_SURU_3|1|9|1|2026-02-14|MC1",
+                      "ItinerarySequence": 1,
+                      "ItemType": "CRU",
+                      "ItemCode": "RLTEST_SURU_3",
+                      "Selectability": "Mandatory",
+                      "SubstitutableGroupCode": "",
+                      "IsLeadItem": true,
+                      "Action": "",
+                      "SourceType": "Catalogue",
+                      "StartDay": "1",
+                      "EndDay": "9",
+                      "Location": "COK",
+                      "IsConfiguredItem": true,
+                      "IsFlexible": false,
+                      "ItemCategoryCode": "MC1",
+                      "ItemOccurenceCode": "",
+                      "DisplayPrice": {
+                        "PerUnitCharges": [
+                          {
+                            "PerPaxCharges": {
+                              "Charge": [
+                                {
+                                  "ChargeType": "DISPCHARGE",
+                                  "Category": "Base",
+                                  "Currency": "USD",
+                                  "ChargeLevel": "PerPax",
+                                  "IsCommissionable": true,
+                                  "PaxId": "1",
+                                  "BasePrice": {
+                                    "Amount": 200000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "BaseCost": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "GrossPrice": {
+                                    "Amount": 200000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "NetPrice": {
+                                    "Amount": 200000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "Discount": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  }
+                                },
+                                {
+                                  "ChargeType": "DISPCHARGE",
+                                  "Category": "Base",
+                                  "Currency": "USD",
+                                  "ChargeLevel": "PerPax",
+                                  "IsCommissionable": true,
+                                  "PaxId": "2",
+                                  "BasePrice": {
+                                    "Amount": 200000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "BaseCost": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "GrossPrice": {
+                                    "Amount": 200000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "NetPrice": {
+                                    "Amount": 200000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "Discount": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  }
+                                }
+                              ]
+                            },
+                            "UnitCharges": {
+                              "Charge": [
+                                {
+                                  "BasePrice": {
+                                    "Amount": 400000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "BaseCost": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "GrossPrice": {
+                                    "Amount": "400000.00",
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "NetPrice": {
+                                    "Amount": 400000,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "Discount": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "Currency": "USD",
+                                  "ChargeType": "DISPCHARGE",
+                                  "ChargeLevel": "Once",
+                                  "Category": "Base",
+                                  "IsCommissionable": true,
+                                  "AgencyCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "VendorCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  },
+                                  "MarkUp": {
+                                    "Amount": 0,
+                                    "Currency": "USD",
+                                    "value": ""
+                                  }
+                                }
+                              ]
+                            },
+                            "UnitPrice": {
+                              "Charge": {
+                                "BasePrice": {
+                                  "Amount": 400000,
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "BaseCost": {
+                                  "Amount": 0,
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "GrossPrice": {
+                                  "Amount": "400000.00",
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "NetPrice": {
+                                  "Amount": 400000,
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "Discount": {
+                                  "Amount": 0,
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "Currency": "USD",
+                                "ChargeType": "DISPCHARGE",
+                                "ChargeLevel": "Once",
+                                "Category": "Base",
+                                "IsCommissionable": true,
+                                "AgencyCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "VendorCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD",
+                                  "value": ""
+                                },
+                                "MarkUp": {
+                                  "Amount": 0,
+                                  "Currency": "USD",
+                                  "value": ""
+                                }
+                              }
+                            },
+                            "PerUnitRPH": 0
+                          }
+                        ],
+                        "TotalCharges": {
+                          "Charge": [
+                            {
+                              "BasePrice": {
+                                "Amount": 400000,
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "BaseCost": {
+                                "Amount": 0,
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "GrossPrice": {
+                                "Amount": "400000.00",
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "NetPrice": {
+                                "Amount": 400000,
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "Discount": {
+                                "Amount": 0,
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "Currency": "USD",
+                              "ChargeType": "DISPCHARGE",
+                              "ChargeLevel": "Once",
+                              "Category": "Base",
+                              "IsCommissionable": true,
+                              "AgencyCommission": {
+                                "Amount": 0,
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "VendorCommission": {
+                                "Amount": 0,
+                                "Currency": "USD",
+                                "value": ""
+                              },
+                              "MarkUp": {
+                                "Amount": 0,
+                                "Currency": "USD",
+                                "value": ""
+                              }
+                            }
+                          ]
+                        },
+                        "ItemPrice": {
+                          "BasePrice": {
+                            "Amount": 400000,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "BaseCost": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "GrossPrice": {
+                            "Amount": "400000.00",
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "NetPrice": {
+                            "Amount": 400000,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "Discount": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "Currency": "USD",
+                          "ChargeType": "DISPCHARGE",
+                          "ChargeLevel": "Once",
+                          "Category": "Base",
+                          "IsCommissionable": true,
+                          "AgencyCommission": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "VendorCommission": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          },
+                          "MarkUp": {
+                            "Amount": 0,
+                            "Currency": "USD",
+                            "value": ""
+                          }
+                        }
+                      },
+                      "FlexibleAttributes": {},
+                      "ItemRatePlanCode": "NEW_RAZ_TST1",
+                      "CruiseFacilities": {
+                        "CruiseFacility": []
+                      },
+                      "PricedCategoryCode": "MC1"
+                    },
+                    "ItineraryItemProduct": {
+                      "PassengerReferences": {
+                        "PassengerReference": [
+                          {
+                            "ID": 1,
+                            "PaxType": "A"
+                          },
+                          {
+                            "ID": 2,
+                            "PaxType": "A"
+                          }
+                        ]
+                      },
+                      "ProductSubType": "PKG",
+                      "OrchestrationContext": "PKG",
+                      "ProductType": "CRU",
+                      "ProviderCode": "iTravel",
+                      "Brand": "CEL",
+                      "BookingType": "IND",
+                      "Cruise": {
+                        "SailingInfo": {
+                          "SelectedSailing": {
+                            "CabinSequenceNumber": "1",
+                            "VoyageID": "RLTEST_SURU_3",
+                            "CruiseType": "WC",
+                            "Start": "2026-02-14T18:00:00.000Z",
+                            "Duration": 8,
+                            "End": "2026-02-22T03:00:00.000Z",
+                            "ItineraryCode": "15NSB-FMT-BYO",
+                            "ItineraryName": "8 Night Falmouth Bay Of Islands",
+                            "PreCruOvernightStay": "No",
+                            "PostCruOvernightStay": "No",
+                            "NumberOfOverseasNights": 0,
+                            "CheckInSlotStartTime": "",
+                            "CheckInSlotEndTime": "",
+                            "ShipDetails": {
+                              "ShipCode": "RL",
+                              "ShipName": "RL",
+                              "ShipClassCode": "AN",
+                              "ConfigCode": "TEST1",
+                              "PaxControlCapacity": "No"
+                            },
+                            "CruiseLine": {
+                              "Code": "RCI"
+                            },
+                            "Regions": {
+                              "Region": [
+                                "FARE"
+                              ]
+                            },
+                            "DeparturePort": {
+                              "LocationCode": "FMT",
+                              "LocationName": "Falmouth",
+                              "LocationCountryCode": "JM"
+                            },
+                            "ArrivalPort": {
+                              "LocationCode": "BYO",
+                              "LocationName": "Bay Of Islands",
+                              "LocationCountryCode": "NZ"
+                            },
+                            "CruiseWTLPreferences": {
+                              "CruiseWTLPreference": []
+                            }
+                          },
+                          "SpecialRequest": {
+                            "CabinRequests": {
+                              "CabinSequenceNumber": 1,
+                              "BedConfigurations": ""
+                            }
+                          },
+                          "Currency": {
+                            "CurrencyCode": "USD"
+                          },
+                          "SelectedCategory": {
+                            "InvBlockCode": "RLTEST_SURU_3_SYS",
+                            "BerthedCategoryCode": "MC1",
+                            "BookFreeDiningRestricted": false,
+                            "PricedCategoryCode": "MC1",
+                            "IsMarketingCategory": true,
+                            "FareCode": "NEW_RAZ_TST1",
+                            "PortChargeCode": "",
+                            "CategoryName": "MC1",
+                            "CategoryClass": "OCN",
+                            "FareName": "Raz_tst1",
+                            "FareClassCode": "N/A",
+                            "RateID": "NEW_RAZ_TST1000012033",
+                            "RatePlanTypeCode": "DISCOUNT",
+                            "RatePlanTypeName": "DISCOUNT",
+                            "RatePlanClassificationCode": "Standard",
+                            "RatePlanClassificationName": "",
+                            "GuaranteeInd": false,
+                            "SelectedCabin": {
+                              "Status": "AV",
+                              "CabinNumber": "",
+                              "BedConfiguration": "",
+                              "DeckNumber": "",
+                              "CruiseFacilities": {
+                                "CruiseFacility": []
+                              }
+                            }
+                          },
+                          "Charges": {
+                            "Charge": [
+                              {
+                                "Currency": "USD",
+                                "ChargeType": "CAB",
+                                "ChargeTypeDescription": "CABIN CHARGE",
+                                "PaxId": 1,
+                                "paxType": "A",
+                                "IsCommissionable": true,
+                                "Category": "Base",
+                                "BasePrice": {
+                                  "Amount": 200000,
+                                  "Currency": "USD"
+                                },
+                                "BaseCost": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "Discount": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "GrossPrice": {
+                                  "Amount": 200000,
+                                  "Currency": "USD"
+                                },
+                                "AgencyCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "StandardCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "BonusCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "NetPrice": {
+                                  "Amount": 200000,
+                                  "Currency": "USD"
+                                },
+                                "MarkUp": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "Hidden": "NO",
+                                "Included": "NO"
+                              },
+                              {
+                                "Currency": "USD",
+                                "ChargeType": "CAB",
+                                "ChargeTypeDescription": "CABIN CHARGE",
+                                "PaxId": 2,
+                                "paxType": "A",
+                                "IsCommissionable": true,
+                                "Category": "Base",
+                                "BasePrice": {
+                                  "Amount": 200000,
+                                  "Currency": "USD"
+                                },
+                                "BaseCost": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "Discount": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "GrossPrice": {
+                                  "Amount": 200000,
+                                  "Currency": "USD"
+                                },
+                                "AgencyCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "StandardCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "BonusCommission": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "NetPrice": {
+                                  "Amount": 200000,
+                                  "Currency": "USD"
+                                },
+                                "MarkUp": {
+                                  "Amount": 0,
+                                  "Currency": "USD"
+                                },
+                                "Hidden": "NO",
+                                "Included": "NO"
+                              }
+                            ]
+                          },
+                          "PaxItineraryDetails": {
+                            "PaxItineraryDetail": [
+                              {
+                                "PaxRefID": 1,
+                                "PaxDepartureDate": "2026-02-14",
+                                "PaxDeparturePort": "FMT",
+                                "PaxDepartureTime": "2026-02-14T18:00:00.000Z",
+                                "PaxArrivalDate": "2026-02-22",
+                                "PaxArrivalPort": "BYO",
+                                "PaxArrivalTime": "2026-02-22T03:00:00.000Z"
+                              },
+                              {
+                                "PaxRefID": 2,
+                                "PaxDepartureDate": "2026-02-14",
+                                "PaxDeparturePort": "FMT",
+                                "PaxDepartureTime": "2026-02-14T18:00:00.000Z",
+                                "PaxArrivalDate": "2026-02-22",
+                                "PaxArrivalPort": "BYO",
+                                "PaxArrivalTime": "2026-02-22T03:00:00.000Z"
+                              }
+                            ]
+                          },
+                          "PortAssignments": {
+                            "PortAssignment": [
+                              {
+                                "SequenceNumber": 1,
+                                "PortCode": "FMT",
+                                "DepartureDay": 1,
+                                "DepartureTime": "2026-02-14T18:00:00.000Z",
+                                "ArrivalDay": 0,
+                                "IsTender": false,
+                                "DeparturePier": "",
+                                "PortCodeCountry": "JM"
+                              },
+                              {
+                                "SequenceNumber": 2,
+                                "PortCode": "HNL",
+                                "DepartureDay": 7,
+                                "DepartureTime": "2026-02-20T18:00:00.000Z",
+                                "ArrivalDay": 7,
+                                "ArrivalTime": "2026-02-20T05:00:00.000Z",
+                                "IsTender": false,
+                                "DeparturePier": "",
+                                "ArrivalPier": "",
+                                "PortCodeCountry": "US"
+                              },
+                              {
+                                "SequenceNumber": 3,
+                                "PortCode": "BYO",
+                                "DepartureDay": 0,
+                                "ArrivalDay": 9,
+                                "ArrivalTime": "2026-02-22T03:00:00.000Z",
+                                "IsTender": false,
+                                "ArrivalPier": "",
+                                "PortCodeCountry": "NZ"
+                              }
+                            ]
+                          }
+                        },
+                        "ReservationInfo": "",
+                        "TotalPrice": {
+                          "GrossPrice": {
+                            "Currency": "USD",
+                            "Amount": 400000
+                          },
+                          "NetPrice": {
+                            "Currency": "USD",
+                            "Amount": 400000
+                          },
+                          "BasePrice": {
+                            "Currency": "USD",
+                            "Amount": 400000
+                          },
+                          "BaseCost": {
+                            "Currency": "USD",
+                            "Amount": 0
+                          },
+                          "Discount": {
+                            "Currency": "USD",
+                            "Amount": 0
+                          },
+                          "AgencyCommission": {
+                            "Currency": "USD",
+                            "Amount": 0
+                          },
+                          "StandardCommission": {
+                            "Currency": "USD",
+                            "Amount": 0
+                          },
+                          "BonusCommission": {
+                            "Currency": "USD",
+                            "Amount": 0
+                          },
+                          "VendorCommission": {},
+                          "MarkUp": {
+                            "Currency": "USD",
+                            "Amount": 0
+                          },
+                          "GrossMargin": {},
+                          "NetMargin": {},
+                          "GrossMarginPct": {},
+                          "NetMarginPct": {},
+                          "Currency": "USD"
+                        },
+                        "CruiseBookingInfo": {
+                          "PackageContext": {
+                            "Code": "AISH_GRP_PKG_05",
+                            "Category": "DMD",
+                            "PackageDeparture": "2026-02-14"
+                          }
+                        }
+                      },
+                      "ProductStatus": "AVAILABLE",
+                      "PriceCurrency": "USD"
+                    },
+                    "BaseCategoryComponent": {
+                      "ItineraryItemInfo": {
+                        "RPH": "14",
+                        "UniqueRefID": "CRU|RLTEST_SURU_3|1|9|1|2026-02-14",
+                        "ItemRefId": "CRU|RLTEST_SURU_3|1|9|1|2026-02-14|TU",
+                        "ItinerarySequence": 1,
+                        "ItemType": "CRU",
+                        "ItemCode": "RLTEST_SURU_3",
+                        "Selectability": "Mandatory",
+                        "SubstitutableGroupCode": "",
+                        "IsLeadItem": true,
+                        "Action": "",
+                        "SourceType": "Catalogue",
+                        "StartDay": "1",
+                        "EndDay": "9",
+                        "Location": "COK",
+                        "IsConfiguredItem": "",
+                        "IsFlexible": false,
+                        "ItemCategoryCode": "TU",
+                        "ItemOccurenceCode": "",
+                        "SupplementalPrice": {},
+                        "AddOnPrice": {},
+                        "ExcludablePrice": {},
+                        "DisplayPrice": {},
+                        "FlexibleAttributes": {},
+                        "ItemRatePlanCode": "NEW_RAZ_TST1",
+                        "PricedCategoryCode": "TU"
+                      },
+                      "ItineraryItemProduct": {
+                        "PassengerReferences": {
+                          "PassengerReference": [
+                            {
+                              "ID": 1,
+                              "PaxType": "A"
+                            },
+                            {
+                              "ID": 2,
+                              "PaxType": "A"
+                            }
+                          ]
+                        },
+                        "ProductSubType": "PKG",
+                        "OrchestrationContext": "PKG",
+                        "ProductType": "CRU",
+                        "ProviderCode": "iTravel",
+                        "Brand": null,
+                        "BookingType": "IND",
+                        "Cruise": {
+                          "SailingInfo": {
+                            "Charges": {
+                              "Charge": [
+                                {
+                                  "Currency": "USD",
+                                  "ChargeType": "CAB",
+                                  "ChargeTypeDescription": "CABIN CHARGE",
+                                  "PaxId": 1,
+                                  "paxType": "A",
+                                  "IsCommissionable": true,
+                                  "Category": "Base",
+                                  "BasePrice": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "BaseCost": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "Discount": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "GrossPrice": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "AgencyCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "StandardCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "BonusCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "NetPrice": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "MarkUp": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "Hidden": "NO",
+                                  "Included": "NO"
+                                },
+                                {
+                                  "Currency": "USD",
+                                  "ChargeType": "CAB",
+                                  "ChargeTypeDescription": "CABIN CHARGE",
+                                  "PaxId": 2,
+                                  "paxType": "A",
+                                  "IsCommissionable": true,
+                                  "Category": "Base",
+                                  "BasePrice": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "BaseCost": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "Discount": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "GrossPrice": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "AgencyCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "StandardCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "BonusCommission": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "NetPrice": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "MarkUp": {
+                                    "Amount": 0,
+                                    "Currency": "USD"
+                                  },
+                                  "Hidden": "NO",
+                                  "Included": "NO"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "ExcludedInclusions": null
+              },
+              "ExcludedInclusions": {
+                "Component": []
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling-availability/api/public-availability/v1/rest/avl/availability/cruiseAggrAvailabilitySearch",
+    "method": "POST",
+    "body": {
+      "Data": {
+        "IBS_CruAggregateRQ": {
+          "CruiseSearch": {
+            "SelectedSailing": {
+              "CruiseID": "RLTEST_SURU_3",
+              "FareCode": "NEW_RAZ_TST1",
+              "SelectedCategory": "MC1",
+              "SelectedCabin": "REAL CABIN",
+              "InventoryBlockCode": "RLTEST_SURU_3_SYS",
+              "CabinSequenceNumber": 1
+            }
+          },
+          "AdhocCriteria": {
+            "HoldUnholdCabin": "Hold"
+          },
+          "CruiseParticulars": {
+            "BookingType": "IND"
+          },
+          "ActionType": "Create Cart",
+          "GuestDetails": {
+            "Guest": [
+              {
+                "ID": 1,
+                "PaxType": "A",
+                "GrossPrice": {
+                  "Round": true
+                },
+                "GrossPriceInBkgCurrency": {
+                  "Round": true
+                }
+              },
+              {
+                "ID": 2,
+                "PaxType": "A",
+                "GrossPrice": {
+                  "Round": true
+                },
+                "GrossPriceInBkgCurrency": {
+                  "Round": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      "mData": "null",
+      "ProviderCode": "iTravel",
+      "PriceCurrency": "USD"
+    }
+  },
+  {
+    "url": "https://sandbox.itravel.ibsplc.org/iTravel/selling/api/public-shoppingcart/v1/rest/crt/shoppingcart/create",
+    "method": "POST",
+    "body": {
+      "userId": "troshan@rccl.com",
+      "currency": "USD",
+      "addedDate": "2026-02-02T03:38:59.288",
+      "emailId": "",
+      "firstName": "IBS",
+      "lastName": "iCommerce",
+      "CartInfo": {
+        "Passengers": {
+          "Passenger": [
+            {
+              "RefId": 1,
+              "PaxType": "A",
+              "IsLeadPassenger": true,
+              "FirstName": "Raniya",
+              "LastName": "crupkg",
+              "memberContactInformation": [
+                {
+                  "addressType": "H"
+                }
+              ],
+              "Contacts": {
+                "Contact": [
+                  {
+                    "Email": "",
+                    "ContactType": "H",
+                    "Address": {
+                      "AddressLineOne": "",
+                      "City": "",
+                      "CountryCode": "",
+                      "StateProv": "",
+                      "ZipCode": "",
+                      "CountryName": "",
+                      "IsVerifiedAddress": false
+                    }
+                  }
+                ]
+              },
+              "paxRefId": 1,
+              "IsSeated": true,
+              "LoyaltyTier": "",
+              "LoyaltyTierValue": ""
+            },
+            {
+              "RefId": 2,
+              "PaxType": "A",
+              "paxRefId": 2,
+              "IsSeated": true,
+              "LoyaltyTier": "",
+              "LoyaltyTierValue": "",
+              "IsLeadPassenger": false
+            }
+          ]
+        },
+        "BookingContact": {
+          "Email": "",
+          "FirstName": "Raniya",
+          "LastName": "crupkg",
+          "MiddleName": "",
+          "FirstName_En": "Raniya",
+          "LastName_En": "crupkg",
+          "MiddleName_En": "",
+          "PhoneNumber": "",
+          "ZipCode": "",
+          "Title": "",
+          "ContactType": "CUSTOMER",
+          "DateOfBirth": "",
+          "CrmID": ""
+        }
+      },
+      "lineitems": {
+        "lineitem": [
+          {
+            "Product": {
+              "RefId": 120,
+              "IsOfflineProduct": false,
+              "PassengerReferences": {
+                "PassengerReference": [
+                  {
+                    "ID": 1,
+                    "PaxType": "A"
+                  },
+                  {
+                    "ID": 2,
+                    "PaxType": "A"
+                  }
+                ]
+              },
+              "BookingType": "IND",
+              "ProductType": "PKG",
+              "ProviderCode": "iTravel",
+              "ProductStatus": "AVAILABLE",
+              "ProductName": "AISH_GRP_PKG_05",
+              "PriceCurrency": "USD",
+              "Package": {
+                "TotalPrice": {
+                  "Currency": "USD",
+                  "GrossPrice": {
+                    "Currency": "USD",
+                    "Amount": 400000,
+                    "Round": true
+                  },
+                  "NetPrice": {
+                    "Currency": "USD",
+                    "Amount": 400000,
+                    "Round": true
+                  },
+                  "BasePrice": {
+                    "Currency": "USD",
+                    "Amount": 400000,
+                    "Round": true
+                  },
+                  "BaseCost": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "Discount": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "AgencyCommission": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "StandardCommission": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "BonusCommission": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "VendorCommission": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "MarkUp": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "GrossProfit": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "NetProfit": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "GrossProfitMargin": 0,
+                  "NetProfitMargin": 0,
+                  "ProviderCommission": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "OriginalSupplierCost": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "SupplierDiscount": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "PriceServiceTax": {
+                    "Round": true
+                  },
+                  "CostServiceTax": {
+                    "Round": true
+                  },
+                  "CommissionServiceTax": {
+                    "Round": true
+                  },
+                  "CostInVendorCCY": {
+                    "Round": true
+                  },
+                  "BasePriceInVendorCCY": {
+                    "Round": true
+                  },
+                  "PricingCCYROE": 0,
+                  "TCCommission": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "TCDiscount": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "AdjustedAmount": {
+                    "Currency": "USD",
+                    "Amount": 0,
+                    "Round": true
+                  },
+                  "RepricedGrossPrice": {
+                    "Round": true
+                  },
+                  "RepricedBaseCost": {
+                    "Round": true
+                  },
+                  "RepricedStandardCommission": {
+                    "Round": true
+                  },
+                  "RepricedStandardCommissionPercentage": 0,
+                  "repricedDiscount": {
+                    "Round": true
+                  }
+                },
+                "TotalInBookingCurrency": {
+                  "Currency": "USD",
+                  "Amount": 400000,
+                  "Round": true
+                },
+                "TotalTax": {
+                  "Round": true
+                },
+                "TotalSurcharge": {
+                  "Round": true
+                },
+                "BookingDetails": {
+                  "SkipPromotion": false,
+                  "PackageInfo": {
+                    "LeadItemRatePlanType": "DISCOUNT",
+                    "LeadItemDuration": "8",
+                    "LeadItemFareClass": "NEW_RAZ_TST1",
+                    "LeadItemType": "WC",
+                    "LeadItemRateClassification": "Standard",
+                    "PackageCode": "AISH_GRP_PKG_05",
+                    "PackageName": "AISH_GRP_PKG_05",
+                    "RatePlan": "PKG_AISH_GRP_PKG_05_RP",
+                    "PriceMethodology": "P",
+                    "PriceOpacity": "T",
+                    "PackageCategory": "DMD",
+                    "PackageItineraryName": "ITN_AISH_01",
+                    "PackageItineraryCode": "ITN_AISH_01",
+                    "DepartureDate": "2026-02-14",
+                    "Duration": 10,
+                    "Theme": "",
+                    "IsPriceApportion": false
+                  },
+                  "Destinations": {
+                    "Destination": [
+                      {
+                        "DestinationCode": "COK",
+                        "DestinationType": "CITY",
+                        "DateRange": {
+                          "Start": "2026-02-14",
+                          "End": "2026-02-24",
+                          "Duration": "10"
+                        }
+                      }
+                    ]
+                  },
+                  "PkgPricing": {
+                    "PriceSummary": {
+                      "CurrencyCode": "",
+                      "Amount": 0,
+                      "TaxInclusive": false
+                    }
+                  },
+                  "Charges": {
+                    "Charge": [
+                      {
+                        "ChargeId": 0,
+                        "IsRemoved": false,
+                        "isNewCharge": false,
+                        "Currency": "USD",
+                        "ChargeLevel": "PerPax",
+                        "ChargeType": "PKGBF",
+                        "ChargeTypeDescription": "Package Base fare",
+                        "BaseCost": {
+                          "Currency": "USD",
+                          "Amount": 0,
+                          "Round": true
+                        },
+                        "BasePrice": {
+                          "Currency": "USD",
+                          "Amount": 200000,
+                          "Round": true
+                        },
+                        "Discount": {
+                          "Currency": "USD",
+                          "Amount": 0,
+                          "Round": true
+                
