@@ -48,14 +48,12 @@ func main() {
 
 	// Initialize workflow engine
 	eng := engine.NewEngine(registry, cfg, logger)
-	_ = eng // Will be used by TUI later
 
 	// Initialize parser
 	parser := engine.NewParser()
-	_ = parser // Will be used by TUI later
 
 	// Launch TUI
-	app := tui.NewApp(cfg.Profile.Name, version)
+	app := tui.NewApp(eng, parser, cfg, version)
 	p := tea.NewProgram(app, tea.WithAltScreen())
 
 	if _, err := p.Run(); err != nil {
