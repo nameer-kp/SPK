@@ -1,0 +1,51 @@
+name: itravel-migration
+description: Retrieve booking, insert data, and migrate
+version: "1.0"
+
+inputs:
+  - name: pnr_number
+    type: string
+    prompt: "Enter PNR number"
+    required: true
+
+steps:
+  - id: retrieve_booking
+    name: Retrieve Booking
+    type: http
+    config:
+      method: POST
+      url: "{{profile.base_url}}/selling/api/public-booking/v1/rest/bkg/pnr/retrieve"
+      headers:
+        Content-Type: application/json
+        Accept: application/json
+        x-session-token: "{{profile.session_token}}"
+        x-auth-channel: "ItravelNativeUI@RCG"
+      body:
+        SuperPnrNumber: "{{inputs.pnr_number}}"
+    output: booking_data
+
+  - id: insert_data
+    name: Insert to Migration DB
+    type: http
+    config:
+      method: POST
+      url: "{{profile.dm_service_url}}/itravel/insertData"
+      headers:
+        Content-Type: application/json
+      body: "{{booking_data}}"
+    output: insert_result
+
+  - id: migrate_booking
+    name: Call Migrate Booking API
+    type: http
+    condition: "insert_result.success == true"
+    config:
+      method: POST
+      url: "{{profile.itravel_local_url}}/iTravel/api/public-booking/v1/rest/bkg/pnr/migrateBooking"
+      headers:
+        Content-Type: application/json
+        Accept: application/json
+        x-session-token: "{{profile.session_token}}"
+        x-auth-channel: "ItravelNativeUI@RCG"
+      body: "{{insert_result.request_payload}}"
+    output: migration_result

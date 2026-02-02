@@ -1,0 +1,11 @@
+name: itravel-sandbox
+description: iTravel Sandbox Environment
+
+variables:
+  base_url: https://sandbox.itravel.ibsplc.org/iTravel
+  dm_service_url: http://localhost:8082
+  itravel_local_url: http://localhost:8080
+
+secrets:
+  session_token:
+    env: X_SESSION_TOKEN
