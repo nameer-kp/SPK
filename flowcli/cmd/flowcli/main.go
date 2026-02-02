@@ -4,21 +4,23 @@ import (
 	"fmt"
 	"os"
 
-	// TUI framework
-	_ "github.com/charmbracelet/bubbletea"
-	_ "github.com/charmbracelet/bubbles/list"
-	_ "github.com/charmbracelet/bubbles/spinner"
-	_ "github.com/charmbracelet/bubbles/textinput"
-	_ "github.com/charmbracelet/lipgloss"
-
-	// Utilities
-	_ "github.com/expr-lang/expr"
-	_ "github.com/jmoiron/sqlx"
-	_ "github.com/joho/godotenv"
-	_ "gopkg.in/yaml.v3"
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/nameer-kp/flowcli/internal/tui"
 )
 
+const version = "0.1.0"
+
 func main() {
-	fmt.Println("flowcli v0.1.0")
-	os.Exit(0)
+	profile := os.Getenv("FLOWCLI_PROFILE")
+	if profile == "" {
+		profile = "default"
+	}
+
+	app := tui.NewApp(profile, version)
+	p := tea.NewProgram(app, tea.WithAltScreen())
+
+	if _, err := p.Run(); err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		os.Exit(1)
+	}
 }
