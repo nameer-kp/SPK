@@ -16,3 +16,6 @@ env/
 
 # Generated files
 booking_requests_*.json
+
+# Go binaries
+flowcli/flowcli

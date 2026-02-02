@@ -1,0 +1,27 @@
+name: condition_test
+description: Test workflow for condition evaluation
+steps:
+  - id: setup
+    type: transform
+    config:
+      operations:
+        - type: expr
+          expression: '{"active": true}'
+    output: setup_result
+
+  - id: conditional_step
+    type: transform
+    condition: "setup_result.active == true"
+    config:
+      operations:
+        - type: expr
+          expression: '{"executed": true}'
+    output: conditional_result
+
+  - id: skipped_step
+    type: transform
+    condition: "setup_result.active == false"
+    config:
+      operations:
+        - type: expr
+          expression: '{"should_not_run": true}'
