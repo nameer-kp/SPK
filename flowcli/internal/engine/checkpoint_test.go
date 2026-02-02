@@ -133,6 +133,125 @@ steps:
 	if loaded.WorkflowHash == "" {
 		t.Error("WorkflowHash should not be empty")
 	}
+	if loaded.StartedAt.IsZero() {
+		t.Error("StartedAt should be set")
+	}
+	if loaded.UpdatedAt.IsZero() {
+		t.Error("UpdatedAt should be set")
+	}
+}
+
+func TestCheckpointManager_PreserveStartedAt(t *testing.T) {
+	// Create temp directory for checkpoints
+	tmpDir, err := os.MkdirTemp("", "checkpoint_test")
+	if err != nil {
+		t.Fatalf("Failed to create temp dir: %v", err)
+	}
+	defer os.RemoveAll(tmpDir)
+
+	// Create a test workflow file
+	workflowPath := filepath.Join(tmpDir, "test_workflow.yaml")
+	workflowContent := `name: test-workflow
+description: A test workflow
+steps:
+  - id: step1
+    name: Test Step
+    type: http
+    config:
+      method: GET
+      url: http://example.com
+`
+	if err := os.WriteFile(workflowPath, []byte(workflowContent), 0644); err != nil {
+		t.Fatalf("Failed to write workflow file: %v", err)
+	}
+
+	checkpointDir := filepath.Join(tmpDir, "checkpoints")
+	manager := NewCheckpointManager(checkpointDir)
+
+	workflow := &Workflow{
+		Name:        "test-workflow",
+		Description: "A test workflow",
+	}
+
+	// First save
+	state1 := &WorkflowState{
+		Workflow:    workflow,
+		CurrentStep: 1,
+		Context:     map[string]interface{}{},
+		Inputs:      map[string]interface{}{},
+		Results:     []StepResult{},
+		Status:      "paused",
+	}
+
+	id1, err := manager.Save(state1, workflowPath)
+	if err != nil {
+		t.Fatalf("First Save() failed: %v", err)
+	}
+
+	loaded1, err := manager.Load(id1)
+	if err != nil {
+		t.Fatalf("First Load() failed: %v", err)
+	}
+
+	originalStartedAt := loaded1.StartedAt
+
+	// Wait a bit to ensure different timestamps
+	time.Sleep(50 * time.Millisecond)
+
+	// Second save (simulating resume/update)
+	state2 := &WorkflowState{
+		Workflow:    workflow,
+		CurrentStep: 2,
+		Context:     map[string]interface{}{},
+		Inputs:      map[string]interface{}{},
+		Results:     []StepResult{},
+		Status:      "paused",
+	}
+
+	id2, err := manager.Save(state2, workflowPath)
+	if err != nil {
+		t.Fatalf("Second Save() failed: %v", err)
+	}
+
+	loaded2, err := manager.Load(id2)
+	if err != nil {
+		t.Fatalf("Second Load() failed: %v", err)
+	}
+
+	// StartedAt should be preserved from the first save
+	if !loaded2.StartedAt.Equal(originalStartedAt) {
+		t.Errorf("StartedAt should be preserved: got %v, want %v", loaded2.StartedAt, originalStartedAt)
+	}
+
+	// UpdatedAt should be different (later)
+	if !loaded2.UpdatedAt.After(loaded1.UpdatedAt) {
+		t.Errorf("UpdatedAt should be later on second save: got %v, first was %v", loaded2.UpdatedAt, loaded1.UpdatedAt)
+	}
+}
+
+func TestCheckpointManager_NilValidation(t *testing.T) {
+	tmpDir, err := os.MkdirTemp("", "checkpoint_test")
+	if err != nil {
+		t.Fatalf("Failed to create temp dir: %v", err)
+	}
+	defer os.RemoveAll(tmpDir)
+
+	manager := NewCheckpointManager(tmpDir)
+
+	// Test nil state
+	_, err = manager.Save(nil, "/some/path.yaml")
+	if err == nil {
+		t.Error("Save() should fail with nil state")
+	}
+
+	// Test nil workflow
+	state := &WorkflowState{
+		Workflow: nil,
+	}
+	_, err = manager.Save(state, "/some/path.yaml")
+	if err == nil {
+		t.Error("Save() should fail with nil workflow")
+	}
 }
 
 func TestCheckpointManager_List(t *testing.T) {

@@ -60,6 +60,11 @@ func DefaultCheckpointDir() string {
 
 // Save saves the current workflow state as a checkpoint and returns the checkpoint ID
 func (m *CheckpointManager) Save(state *WorkflowState, workflowPath string) (string, error) {
+	// Validate inputs
+	if state == nil || state.Workflow == nil {
+		return "", fmt.Errorf("state and state.Workflow cannot be nil")
+	}
+
 	// Ensure directory exists
 	if err := os.MkdirAll(m.dir, 0755); err != nil {
 		return "", fmt.Errorf("failed to create checkpoint directory: %w", err)
@@ -73,6 +78,17 @@ func (m *CheckpointManager) Save(state *WorkflowState, workflowPath string) (str
 
 	now := time.Now()
 
+	// Try to find existing checkpoint for this workflow to preserve StartedAt
+	var startedAt time.Time
+	existingCheckpoint, err := m.FindByWorkflow(workflowPath)
+	if err == nil && existingCheckpoint != nil {
+		// Preserve the original StartedAt from existing checkpoint
+		startedAt = existingCheckpoint.StartedAt
+	} else {
+		// First save for this workflow, use current time
+		startedAt = now
+	}
+
 	// Generate checkpoint ID
 	workflowName := state.Workflow.Name
 	// Sanitize workflow name for use in filename
@@ -85,7 +101,7 @@ func (m *CheckpointManager) Save(state *WorkflowState, workflowPath string) (str
 		WorkflowPath: workflowPath,
 		WorkflowHash: hash,
 		WorkflowName: workflowName,
-		StartedAt:    now,
+		StartedAt:    startedAt,
 		UpdatedAt:    now,
 		CurrentStep:  state.CurrentStep,
 		Status:       state.Status,
