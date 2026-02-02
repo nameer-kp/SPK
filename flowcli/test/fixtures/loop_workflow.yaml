@@ -1,0 +1,17 @@
+name: loop_test
+description: Test workflow for loop node
+steps:
+  - id: create_items
+    type: transform
+    config:
+      operations:
+        - type: expr
+          expression: '[1, 2, 3]'
+    output: items
+
+  - id: process_items
+    type: loop
+    config:
+      items: items
+      as: item
+      index: idx
