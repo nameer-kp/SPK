@@ -7,6 +7,7 @@ type Workflow struct {
 	Version     string  `yaml:"version"`
 	Inputs      []Input `yaml:"inputs"`
 	Steps       []Step  `yaml:"steps"`
+	OnError     string  `yaml:"on_error,omitempty"` // abort, skip, pause - default error handling for all steps
 }
 
 // Input defines a user prompt at workflow start
