@@ -41,6 +41,7 @@ func main() {
 	registry.Register(nodes.NewDelayNode())
 	registry.Register(nodes.NewFileNode())
 	registry.Register(nodes.NewShellNode())
+	registry.Register(nodes.NewDBNode())
 
 	// Initialize workflow engine
 	eng := engine.NewEngine(registry, cfg, logger)
