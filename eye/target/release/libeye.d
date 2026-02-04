@@ -1,0 +1,1 @@
+/Users/nameer/Projects/atem/eye/target/release/libeye.rlib: /Users/nameer/Projects/atem/eye/src/curve.rs /Users/nameer/Projects/atem/eye/src/ffi.rs /Users/nameer/Projects/atem/eye/src/geometry.rs /Users/nameer/Projects/atem/eye/src/lib.rs /Users/nameer/Projects/atem/eye/src/matrix.rs /Users/nameer/Projects/atem/eye/src/tui.rs /Users/nameer/Projects/atem/eye/src/vector.rs

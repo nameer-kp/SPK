@@ -1,0 +1,26 @@
+[package]
+name = "eye"
+version = "0.1.0"
+edition = "2021"
+description = "Neural Image Engine - High-performance matrix and geometry computations"
+authors = ["Atem Contributors"]
+
+[lib]
+name = "eye"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+rayon = "1.10"          # Parallel iterators
+nalgebra = "0.33"       # Linear algebra
+num-traits = "0.2"      # Numeric traits
+bytemuck = "1.14"       # Safe transmutes for FFI
+
+[features]
+default = ["parallel"]
+parallel = []
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

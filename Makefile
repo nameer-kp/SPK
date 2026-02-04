@@ -1,4 +1,4 @@
-.PHONY: build test lint clean release-snapshot install help
+.PHONY: build build-eye build-full test test-eye lint clean release-snapshot install help
 
 # Build variables
 VERSION ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
@@ -8,12 +8,15 @@ LDFLAGS := -s -w -X main.version=$(VERSION) -X main.commit=$(COMMIT) -X main.dat
 
 # Default target
 help:
-	@echo "FlowCLI Makefile"
+	@echo "Atem - Workflow Orchestration Framework"
 	@echo ""
 	@echo "Usage:"
 	@echo "  make build            Build the binary"
+	@echo "  make build-eye        Build Eye Rust library"
+	@echo "  make build-full       Build with Eye FFI support"
 	@echo "  make install          Install to GOPATH/bin"
 	@echo "  make test             Run tests"
+	@echo "  make test-eye         Run Eye Rust tests"
 	@echo "  make test-coverage    Run tests with coverage"
 	@echo "  make lint             Run linter"
 	@echo "  make clean            Remove build artifacts"
@@ -22,15 +25,31 @@ help:
 
 # Build the binary
 build:
-	go build -ldflags "$(LDFLAGS)" -o flowcli ./cmd/flowcli
+	go build -ldflags "$(LDFLAGS)" -o atem ./cmd/atem
+
+# Build Eye Rust library
+build-eye:
+	@echo "Building Eye neural image engine..."
+	@cd eye && cargo build --release
+	@echo "Eye library built: eye/target/release/libeye.a"
+
+# Build with Eye FFI support (requires Rust)
+build-full: build-eye
+	@echo "Building Atem with Eye FFI support..."
+	CGO_ENABLED=1 go build -ldflags "$(LDFLAGS)" -o atem ./cmd/atem
 
 # Install to GOPATH/bin
 install:
-	go install -ldflags "$(LDFLAGS)" ./cmd/flowcli
+	go install -ldflags "$(LDFLAGS)" ./cmd/atem
 
 # Run tests
 test:
 	go test -v ./...
+
+# Run Eye Rust tests
+test-eye:
+	@echo "Running Eye tests..."
+	@cd eye && cargo test
 
 # Run tests with coverage
 test-coverage:
@@ -45,9 +64,10 @@ lint:
 
 # Clean build artifacts
 clean:
-	rm -f flowcli
+	rm -f atem flowcli
 	rm -f coverage.out coverage.html
 	rm -rf dist/
+	rm -rf eye/target/
 
 # Build snapshot release (for local testing)
 release-snapshot:

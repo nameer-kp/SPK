@@ -1,0 +1,206 @@
+name: Eye Neural Image Engine Demo
+description: Demonstrates high-performance math, geometry, and TUI rendering
+
+inputs:
+  - name: matrix_size
+    description: Size of test matrices
+    default: "3"
+    type: text
+
+steps:
+  # Matrix Operations
+  - id: identity
+    type: eye
+    name: Create Identity Matrix
+    config:
+      operation: matrix_identity
+      size: "{{inputs.matrix_size}}"
+
+  - id: matrix_a
+    type: variable
+    name: Define Matrix A
+    config:
+      value:
+        - [1, 2, 3]
+        - [4, 5, 6]
+        - [7, 8, 10]
+
+  - id: determinant
+    type: eye
+    name: Compute Determinant
+    config:
+      operation: matrix_det
+      a: "{{matrix_a.value}}"
+
+  - id: inverse_matrix
+    type: eye
+    name: Compute Inverse
+    config:
+      operation: matrix_inverse
+      a: "{{matrix_a.value}}"
+
+  # Vector Operations
+  - id: vector_a
+    type: variable
+    name: Define Vector A
+    config:
+      value: [1, 2, 3]
+
+  - id: vector_b
+    type: variable
+    name: Define Vector B
+    config:
+      value: [4, 5, 6]
+
+  - id: dot_product
+    type: eye
+    name: Dot Product
+    config:
+      operation: vector_dot
+      a: "{{vector_a.value}}"
+      b: "{{vector_b.value}}"
+
+  - id: cross_product
+    type: eye
+    name: Cross Product
+    config:
+      operation: vector_cross
+      a: "{{vector_a.value}}"
+      b: "{{vector_b.value}}"
+
+  - id: vector_norm
+    type: eye
+    name: Vector Norm
+    config:
+      operation: vector_norm
+      a: "{{vector_a.value}}"
+
+  # Geometry Operations
+  - id: triangle_area
+    type: eye
+    name: Triangle Area
+    config:
+      operation: triangle_area
+      v0: [0, 0, 0]
+      v1: [1, 0, 0]
+      v2: [0, 1, 0]
+
+  - id: ray_test
+    type: eye
+    name: Ray-Triangle Intersection
+    config:
+      operation: triangle_intersect
+      v0: [0, 0, 0]
+      v1: [2, 0, 0]
+      v2: [1, 2, 0]
+      ray:
+        origin: [1, 1, -1]
+        direction: [0, 0, 1]
+
+  # Numerical Integration
+  - id: integrate_x2
+    type: eye
+    name: Integrate x² from 0 to 1
+    config:
+      operation: curve_integrate
+      curve:
+        expression: "x^2"
+        a: 0
+        b: 1
+        n: 1000
+
+  - id: integrate_sin
+    type: eye
+    name: Integrate sin(x) from 0 to π
+    config:
+      operation: curve_integrate
+      curve:
+        expression: "sin(x)"
+        a: 0
+        b: 3.14159265359
+        n: 1000
+
+  # TUI Canvas Rendering
+  - id: render_demo
+    type: eye
+    name: Render TUI Demo
+    config:
+      operation: canvas_render
+      canvas:
+        width: 50
+        height: 20
+        draw:
+          # Draw a box
+          - type: rect
+            x: 2
+            y: 1
+            w: 46
+            h: 18
+            char: "#"
+
+          # Draw text
+          - type: text
+            x: 15
+            y: 3
+            text: "Eye TUI Engine"
+
+          # Draw a circle
+          - type: circle
+            cx: 12
+            cy: 10
+            r: 5
+            char: "*"
+
+          # Draw a filled circle
+          - type: fill_circle
+            cx: 37
+            cy: 10
+            r: 5
+            char: "o"
+
+          # Draw a triangle
+          - type: triangle
+            x0: 25
+            y0: 6
+            x1: 20
+            y1: 15
+            x2: 30
+            y2: 15
+            char: "+"
+
+          # Draw a line
+          - type: line
+            x0: 5
+            y0: 17
+            x1: 44
+            y1: 17
+            char: "-"
+
+  # Display results
+  - id: summary
+    type: log
+    name: Results Summary
+    config:
+      level: info
+      message: |
+
+        === Eye Neural Image Engine Results ===
+
+        Matrix Operations:
+        - Determinant: {{determinant.determinant}}
+
+        Vector Operations:
+        - Dot Product: {{dot_product.dot}}
+        - Cross Product: {{cross_product.cross}}
+        - Vector Norm: {{vector_norm.norm}}
+
+        Geometry:
+        - Triangle Area: {{triangle_area.area}}
+        - Ray Hit: {{ray_test.hit}} at t={{ray_test.t}}
+
+        Integration:
+        - ∫x² dx [0,1] = {{integrate_x2.integral}} (expected: 0.333...)
+        - ∫sin(x) dx [0,π] = {{integrate_sin.integral}} (expected: 2.0)
+
+        === TUI Canvas Output ===
+        {{render_demo.output}}
