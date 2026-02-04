@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test \"${CLAUDE_FILE_PATH##*.}\" = \"go\" && goimports -w \"$CLAUDE_FILE_PATH\" || true"
+          },
+          {
+            "type": "command",
+            "command": "test \"${CLAUDE_FILE_PATH##*.}\" = \"go\" && golangci-lint run --fast \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

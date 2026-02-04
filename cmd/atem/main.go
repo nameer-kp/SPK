@@ -76,6 +76,7 @@ func main() {
 	registry.Register(nodes.NewMathNode())
 	registry.Register(nodes.NewBitwiseNode())
 	registry.Register(nodes.NewMemoryNode())
+	registry.Register(nodes.NewEyeNode())
 
 	// Utility nodes
 	registry.Register(nodes.NewLogNode())
