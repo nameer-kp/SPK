@@ -1,0 +1,205 @@
+# 8-bit ALU Simulator
+# Demonstrates how Atem's fundamental nodes can simulate a simple CPU's ALU
+#
+# This workflow implements a basic 8-bit Arithmetic Logic Unit with:
+# - ADD, SUB operations (arithmetic)
+# - AND, OR, XOR, NOT operations (logic)
+# - Flags: Zero (Z), Carry (C), Negative (N)
+
+name: 8bit-alu-simulator
+description: Simulate an 8-bit ALU with basic arithmetic and logic operations
+
+inputs:
+  - name: operation
+    type: string
+    prompt: "ALU Operation"
+    default: "add"
+  - name: operand_a
+    type: number
+    prompt: "Operand A (0-255)"
+    default: 42
+  - name: operand_b
+    type: number
+    prompt: "Operand B (0-255)"
+    default: 15
+
+steps:
+  # Initialize ALU registers
+  - id: init_alu
+    name: Initialize ALU state
+    type: memory
+    config:
+      operation: alloc
+      name: alu_state
+      size: 8  # 8 bytes: A, B, Result, Flags, Temp1-4
+
+  # Store operand A (masked to 8 bits)
+  - id: store_a
+    name: Store operand A
+    type: math
+    config:
+      operation: mod
+      a: "{{inputs.operand_a}}"
+      b: 256
+
+  - id: write_a
+    name: Write A to register
+    type: memory
+    config:
+      operation: write
+      name: alu_state
+      address: 0
+      value: "{{store_a.result}}"
+
+  # Store operand B (masked to 8 bits)
+  - id: store_b
+    name: Store operand B
+    type: math
+    config:
+      operation: mod
+      a: "{{inputs.operand_b}}"
+      b: 256
+
+  - id: write_b
+    name: Write B to register
+    type: memory
+    config:
+      operation: write
+      name: alu_state
+      address: 1
+      value: "{{store_b.result}}"
+
+  # Execute ALU operation based on opcode
+  - id: alu_op
+    name: Execute ALU operation
+    type: switch
+    config:
+      value: "{{inputs.operation}}"
+      cases:
+        - match: "add"
+          result: "add"
+        - match: "sub"
+          result: "sub"
+        - match: "and"
+          result: "and"
+        - match: "or"
+          result: "or"
+        - match: "xor"
+          result: "xor"
+        - match: "not"
+          result: "not"
+      default: "add"
+
+  # Perform ADD
+  - id: do_add
+    name: Perform addition
+    type: condition
+    config:
+      if: "op == 'add'"
+      vars:
+        op: "{{alu_op.result}}"
+      then:
+        enabled: true
+
+  - id: add_result
+    name: Calculate A + B
+    type: math
+    config:
+      operation: add
+      a: "{{store_a.result}}"
+      b: "{{store_b.result}}"
+
+  # Apply 8-bit mask and detect carry
+  - id: check_carry
+    name: Check for carry flag
+    type: condition
+    config:
+      compare:
+        left: "{{add_result.result}}"
+        op: ">"
+        right: 255
+
+  - id: mask_result
+    name: Mask to 8 bits
+    type: bitwise
+    config:
+      operation: and
+      a: "{{add_result.result}}"
+      b: 255
+      width: 8
+
+  # Check zero flag
+  - id: check_zero
+    name: Check zero flag
+    type: condition
+    config:
+      compare:
+        left: "{{mask_result.result}}"
+        op: "=="
+        right: 0
+
+  # Check negative flag (bit 7)
+  - id: check_negative
+    name: Check negative flag (bit 7)
+    type: bitwise
+    config:
+      operation: getbit
+      a: "{{mask_result.result}}"
+      bits: 7
+
+  # Build flags byte: bit 0 = Z, bit 1 = C, bit 2 = N
+  - id: build_flags
+    name: Build flags register
+    type: math
+    config:
+      operation: expr
+      expression: "z * 1 + c * 2 + n * 4"
+      vars:
+        z: "{{check_zero.result}}"
+        c: "{{check_carry.result}}"
+        n: "{{check_negative.result}}"
+
+  # Store result
+  - id: write_result
+    name: Write result to register
+    type: memory
+    config:
+      operation: write
+      name: alu_state
+      address: 2
+      value: "{{mask_result.result}}"
+
+  # Store flags
+  - id: write_flags
+    name: Write flags to register
+    type: memory
+    config:
+      operation: write
+      name: alu_state
+      address: 3
+      value: "{{build_flags.result}}"
+
+  # Dump final state
+  - id: dump_state
+    name: Dump ALU state
+    type: memory
+    config:
+      operation: dump
+      name: alu_state
+      address: 0
+      length: 4
+
+  # Format output
+  - id: output
+    name: Format ALU output
+    type: log
+    config:
+      level: info
+      message: |
+        === 8-bit ALU Result ===
+        Operation: {{inputs.operation}}
+        A: {{store_a.result}} (0x{{store_a.result | hex}})
+        B: {{store_b.result}} (0x{{store_b.result | hex}})
+        Result: {{mask_result.result}} (0x{{mask_result.result | hex}})
+        Flags: Z={{check_zero.result}}, C={{check_carry.result}}, N={{check_negative.result}}
+        ========================
