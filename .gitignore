@@ -19,3 +19,8 @@ booking_requests_*.json
 
 # Go binaries
 flowcli/flowcli
+/flowcli
+*.exe
+dist/
+coverage.out
+coverage.html

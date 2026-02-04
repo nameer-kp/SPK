@@ -1,0 +1,125 @@
+# Counter Demo
+# Demonstrates loops, variables, and conditions using fundamental nodes
+#
+# This shows how Atem can implement state machines and iterative logic
+
+name: counter-demo
+description: A simple counter demonstrating loops and state management
+
+inputs:
+  - name: count_to
+    type: number
+    prompt: "Count to (max 100)"
+    default: 10
+  - name: step
+    type: number
+    prompt: "Step increment"
+    default: 1
+
+steps:
+  # Initialize counter variable
+  - id: init_counter
+    name: Initialize counter
+    type: variable
+    config:
+      operation: set
+      name: counter
+      value: 0
+
+  # Initialize sum variable
+  - id: init_sum
+    name: Initialize sum
+    type: variable
+    config:
+      operation: set
+      name: sum
+      value: 0
+
+  # Initialize results array
+  - id: init_results
+    name: Initialize results
+    type: variable
+    config:
+      operation: set
+      name: results
+      value: []
+
+  # Generate the iteration values
+  - id: generate_loop
+    name: Generate loop iterations
+    type: loop
+    config:
+      type: for
+      from: 0
+      to: "{{inputs.count_to}}"
+      step: "{{inputs.step}}"
+      as: value
+      index_as: i
+      max_iters: 100
+
+  # Log each iteration (this shows the loop data)
+  - id: log_iterations
+    name: Log iteration count
+    type: log
+    config:
+      level: info
+      message: "Loop will execute {{generate_loop.count}} times"
+
+  # Calculate final sum using math
+  - id: calc_sum
+    name: Calculate sum (arithmetic series)
+    type: math
+    config:
+      operation: expr
+      expression: "(n * (n - 1)) / 2 * step"
+      vars:
+        n: "{{generate_loop.count}}"
+        step: "{{inputs.step}}"
+
+  # Build result array
+  - id: build_array
+    name: Build result array
+    type: array
+    config:
+      operation: create
+      values: "{{generate_loop.iterations}}"
+
+  # Get first and last values
+  - id: first_val
+    name: Get first value
+    type: array
+    config:
+      operation: first
+      input: "{{generate_loop.iterations}}"
+
+  - id: last_val
+    name: Get last value
+    type: array
+    config:
+      operation: last
+      input: "{{generate_loop.iterations}}"
+
+  # Assert we got the expected count
+  - id: verify_count
+    name: Verify iteration count
+    type: assert
+    config:
+      that: "count > 0"
+      vars:
+        count: "{{generate_loop.count}}"
+      message: "Loop should have at least one iteration"
+
+  # Format final output
+  - id: final_output
+    name: Display results
+    type: log
+    config:
+      level: info
+      message: |
+        === Counter Results ===
+        Counted from 0 to {{inputs.count_to}} by {{inputs.step}}
+        Total iterations: {{generate_loop.count}}
+        Sum of values: {{calc_sum.result}}
+        First value: {{first_val.result.value}}
+        Last value: {{last_val.result.value}}
+        ========================
