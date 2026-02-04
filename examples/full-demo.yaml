@@ -1,0 +1,79 @@
+name: full-demo
+description: Demonstrates all node types
+
+inputs:
+  - name: output_file
+    type: string
+    prompt: "Output file path"
+    default: "/tmp/atem-demo.txt"
+
+steps:
+  - id: delay_start
+    name: Brief pause
+    type: delay
+    config:
+      duration: "1s"
+
+  - id: check_file
+    name: Check if output exists
+    type: file
+    config:
+      operation: exists
+      path: "{{inputs.output_file}}"
+
+  - id: write_header
+    name: Write file header
+    type: file
+    config:
+      operation: write
+      path: "{{inputs.output_file}}"
+      content: |
+        Atem Demo Output
+        ==================
+        Generated at: {{env.USER}}
+
+  - id: get_date
+    name: Get current date
+    type: shell
+    config:
+      command: date
+      args: ["+%Y-%m-%d %H:%M:%S"]
+
+  - id: append_date
+    name: Append date to file
+    type: file
+    config:
+      operation: append
+      path: "{{inputs.output_file}}"
+      content: "\nDate: {{get_date.stdout}}"
+
+  - id: fetch_data
+    name: Fetch sample JSON
+    type: http
+    config:
+      method: GET
+      url: "https://jsonplaceholder.typicode.com/posts/1"
+
+  - id: transform_data
+    name: Extract title
+    type: transform
+    config:
+      input: fetch_data
+      operations:
+        - type: jsonpath
+          expression: "title"
+
+  - id: append_title
+    name: Append fetched title
+    type: file
+    config:
+      operation: append
+      path: "{{inputs.output_file}}"
+      content: "\nFetched title: {{transform_data}}"
+
+  - id: read_result
+    name: Read final file
+    type: file
+    config:
+      operation: read
+      path: "{{inputs.output_file}}"

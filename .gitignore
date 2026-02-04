@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Generated files
+booking_requests_*.json
+
+# Go binaries
+/flowcli
+*.exe
+dist/
+coverage.out
+coverage.html
