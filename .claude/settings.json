@@ -1,0 +1,9 @@
+{
+  "skills": {
+    "tty-origins": {
+      "path": ".claude/skills/tty-origins.md",
+      "description": "Tell the epic mythology of the TTY - where terminals came from and why they're pure magic",
+      "triggers": ["tty-origins", "terminal story", "tty magic"]
+    }
+  }
+}
